@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts (Poppins) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="notes.css">
+</head>
+<body>
+
+  <!-- Main Container -->
+  <div class="app-container">
+
+    <!-- Header Section -->
+    <div class="app-header">
+      <div class="logo-icon">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </div>
+      <h1>Notes</h1>
+    </div>
+
+    <!-- Create Notes Action Button -->
+    <button id="createNoteBtn">
+      <i class="fa-solid fa-pen-to-square"></i>
+      <span>Create Notes</span>
+    </button>
+
+    <!-- Dynamic Notes List Container -->
+    <div id="notesContainer" class="notes-container">
+      <!-- Notes will be inserted here via JavaScript -->
+    </div>
+
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="notes.js"></script>
+</body>
+</html>

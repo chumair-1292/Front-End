@@ -1,0 +1,171 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: linear-gradient(135deg, #e3c5ff 0%, #a4a2ff 100%); /* Soft Pastel Purple Gradient */
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+/* ==========================================
+   APP CONTAINER
+   ========================================== */
+.app-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================
+   HEADER SECTION
+   ========================================== */
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 22px;
+  box-shadow: 0 8px 15px rgba(124, 58, 237, 0.3);
+}
+
+.app-header h1 {
+  color: #ffffff;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   CREATE NOTES BUTTON
+   ========================================== */
+#createNoteBtn {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+  color: #ffffff;
+  border: none;
+  outline: none;
+  padding: 12px 28px;
+  border-radius: 25px; /* Pill Shape */
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 30px;
+}
+
+#createNoteBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.45);
+}
+
+#createNoteBtn:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   NOTES CONTAINER & CARDS
+   ========================================== */
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* White Note Card Box */
+.note-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 20px 45px 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.note-card:focus-within {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Editable Text Area */
+.note-card p {
+  width: 100%;
+  min-height: 100px;
+  outline: none;
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  word-break: break-word;
+}
+
+/* Empty Placeholder Text Styling */
+.note-card p[contenteditable]:empty:before {
+  content: "Type note here...";
+  color: #a0a0a0;
+  cursor: text;
+}
+
+/* Trash / Delete Icon */
+.delete-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  color: #718096;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  color: #e53e3e; /* Red color on hover */
+  transform: scale(1.15);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media screen and (max-width: 480px) {
+  body {
+    padding: 30px 15px;
+  }
+
+  .app-header h1 {
+    font-size: 30px;
+  }
+
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  #createNoteBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
