@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text To Speech Converter</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts (Poppins) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="speach.css">
+</head>
+<body>
+
+  <!-- Main Container -->
+  <div class="converter-card">
+
+    <!-- Title Heading -->
+    <div class="heading-box">
+      <h1>Text To Speech <span class="red-text">Converter</span></h1>
+      <div class="red-line"></div>
+    </div>
+
+    <!-- Text Input Area -->
+    <div class="textarea-box">
+      <textarea id="textInput" placeholder="Write anything here..."></textarea>
+    </div>
+
+    <!-- Controls Row (Voice Selector & Listen Button) -->
+    <div class="controls-row">
+      <div class="select-box">
+        <select id="voiceSelect">
+          <!-- Voices will be populated dynamically via JavaScript -->
+        </select>
+        <i class="fa-solid fa-chevron-down select-arrow"></i>
+      </div>
+
+      <button id="listenBtn">
+        <i class="fa-solid fa-play" id="btnIcon"></i>
+        <span id="btnText">Listen</span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="speach.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #200245; /* Dark Purple Background */
+  padding: 20px;
+}
+
+/* ==========================================
+   MAIN CARD CONTAINER (Responsive)
+   ========================================== */
+.converter-card {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================
+   HEADING SECTION
+   ========================================== */
+.heading-box {
+  margin-bottom: 30px;
+}
+
+.heading-box h1 {
+  color: #ffffff;
+  font-size: Clamp(28px, 6vw, 40px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.heading-box h1 .red-text {
+  color: #ff3b5c; /* Exact Red/Pinkish Accent */
+}
+
+.red-line {
+  width: 100%;
+  height: 3px;
+  background-color: #ff3b5c;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* ==========================================
+   TEXTAREA BOX
+   ========================================== */
+.textarea-box {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.textarea-box textarea {
+  width: 100%;
+  height: 250px;
+  background-color: #383177; /* Dark Blue Textarea Container */
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  resize: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.textarea-box textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
+
+/* ==========================================
+   CONTROLS ROW (Voice Dropdown & Button)
+   ========================================== */
+.controls-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Voice Select Dropdown Container */
+.select-box {
+  flex: 1;
+  position: relative;
+  height: 50px;
+  background-color: #383177;
+  border-radius: 25px; /* Pill shape */
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.select-box select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 20px;
+}
+
+.select-box select option {
+  background-color: #200245;
+  color: #ffffff;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 20px;
+  color: #ffffff;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* Listen Action Button */
+.controls-row button {
+  height: 50px;
+  padding: 0 28px;
+  background-color: #ff3b5c; /* Exact Red/Pink Accent Button */
+  border: none;
+  outline: none;
+  border-radius: 25px; /* Pill shape */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  box-shadow: 0 6px 18px rgba(255, 59, 92, 0.3);
+  white-space: nowrap;
+}
+
+.controls-row button:hover {
+  background-color: #e02f4d;
+}
+
+.controls-row button:active {
+  transform: scale(0.97);
+}
+
+.controls-row button i {
+  font-size: 14px;
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE STYLES
+   ========================================== */
+@media screen and (max-width: 480px) {
+  .controls-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .select-box {
+    width: 100%;
+  }
+
+  .controls-row button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .textarea-box textarea {
+    height: 200px;
+  }
+}
