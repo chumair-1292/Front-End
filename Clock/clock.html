@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pakistan & World Real-Time Clock</title>
+
+  <!-- Google Fonts (Poppins) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+
+  <div class="clock-wrapper">
+
+    <!-- Background Graphic Shapes -->
+    <div class="shape-square"></div>
+    <div class="shape-circle"></div>
+
+    <!-- Glassmorphism Clock Container -->
+    <div class="clock-card">
+
+      <!-- Country / Region Selector (Pakistan Default) -->
+      <div class="timezone-selector">
+        <label for="citySelect">Select Country / Region:</label>
+        <select id="citySelect">
+          <option value="Asia/Karachi" selected>🇵🇰 Pakistan (PKT - Default)</option>
+          <option value="LOCAL">📍 Device Local Time</option>
+          <option value="Asia/Riyadh">🇸🇦 Saudi Arabia / Makkah (AST)</option>
+          <option value="Asia/Dubai">🇦🇪 UAE / Dubai (GST)</option>
+          <option value="Europe/London">🇬🇧 United Kingdom / London (GMT/BST)</option>
+          <option value="America/New_York">🇺🇸 USA / New York (EDT/EST)</option>
+          <option value="Asia/Tokyo">🇯🇵 Japan / Tokyo (JST)</option>
+          <option value="Europe/Paris">🇫🇷 France / Paris (CEST)</option>
+          <option value="Australia/Sydney">🇦🇺 Australia / Sydney (AEST)</option>
+          <option value="Asia/Kolkata">🇮🇳 India (IST)</option>
+          <option value="UTC">🌐 UTC (Universal Time)</option>
+        </select>
+      </div>
+
+      <!-- Live Digital Display -->
+      <div class="clock-display">
+        
+        <!-- Hours -->
+        <div class="time-box">
+          <h1 id="hours">00</h1>
+          <p>HOURS</p>
+        </div>
+
+        <!-- Separator -->
+        <div class="separator-box">
+          <h2>:</h2>
+        </div>
+
+        <!-- Minutes -->
+        <div class="time-box">
+          <h1 id="minutes">00</h1>
+          <p>MINS</p>
+        </div>
+
+        <!-- Separator -->
+        <div class="separator-box">
+          <h2>:</h2>
+        </div>
+
+        <!-- Seconds -->
+        <div class="time-box">
+          <h1 id="seconds">00</h1>
+          <p>SEC</p>
+        </div>
+
+      </div>
+
+      <!-- Date & Region Info -->
+      <div class="date-info">
+        <p id="currentDate">Loading Date...</p>
+        <p id="timezoneName">Pakistan Standard Time (PKT)</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="clock.js"></script>
+</body>
+</html>

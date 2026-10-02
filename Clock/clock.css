@@ -1,0 +1,209 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #110d3a;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   WRAPPER & DECORATIVE SHAPES
+   ========================================== */
+.clock-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shape-square {
+  position: absolute;
+  top: -35px;
+  left: -20px;
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, #ff2a5f 0%, #ff523b 100%);
+  border-radius: 14px;
+  z-index: 1;
+}
+
+.shape-circle {
+  position: absolute;
+  bottom: -45px;
+  right: -25px;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, #2b82fb 0%, #00d2ff 100%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* ==========================================
+   GLASSMORPHISM CARD
+   ========================================== */
+.clock-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: linear-gradient(
+    110deg,
+    rgba(255, 38, 126, 0.45) 0%,
+    rgba(35, 21, 87, 0.75) 45%,
+    rgba(17, 13, 58, 0.85) 70%,
+    rgba(32, 133, 252, 0.45) 100%
+  );
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 35px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================
+   DROPDOWN SELECTOR
+   ========================================== */
+.timezone-selector {
+  width: 100%;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.timezone-selector label {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.timezone-selector select {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(17, 13, 58, 0.7);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.timezone-selector select:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(17, 13, 58, 0.85);
+}
+
+.timezone-selector select option {
+  background: #110d3a;
+  color: #ffffff;
+}
+
+/* ==========================================
+   TIME NUMBERS
+   ========================================== */
+.clock-display {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+}
+
+.time-box h1 {
+  color: #ffffff;
+  font-size: Clamp(46px, 10vw, 72px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.time-box p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: Clamp(10px, 2.5vw, 12px);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  margin-top: 10px;
+}
+
+.separator-box h2 {
+  color: #ffffff;
+  font-size: Clamp(36px, 8vw, 56px);
+  font-weight: 300;
+  margin-bottom: 22px;
+  opacity: 0.9;
+}
+
+/* ==========================================
+   DATE & REGION TEXT
+   ========================================== */
+.date-info {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 15px;
+  width: 100%;
+}
+
+.date-info #currentDate {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.date-info #timezoneName {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media screen and (max-width: 580px) {
+  .clock-card {
+    padding: 25px 20px;
+  }
+  .time-box {
+    min-width: 55px;
+  }
+  .shape-square {
+    width: 100px;
+    height: 100px;
+    top: -20px;
+    left: -10px;
+  }
+  .shape-circle {
+    width: 110px;
+    height: 110px;
+    bottom: -25px;
+    right: -10px;
+  }
+}
