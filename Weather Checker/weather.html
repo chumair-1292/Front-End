@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Dynamic Weather App</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+
+  <!-- Weather App Card -->
+  <div class="weather-card" id="weatherCard">
+    
+    <!-- Dynamic Weather Visual Overlay (Rain, Snow, Sun, Lightning) -->
+    <div class="weather-visual-overlay" id="visualOverlay">
+      <div class="sun-flare" id="sunFlare"></div>
+      <div class="lightning-flash" id="lightningFlash"></div>
+      <canvas id="weatherCanvas"></canvas>
+    </div>
+
+    <!-- Search Container -->
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="cityInput" placeholder="enter city or country..." autocomplete="off">
+        <button id="searchBtn" aria-label="Search Weather">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- Live Autocomplete Suggestions -->
+      <div class="suggestions-box" id="suggestionsBox">
+        <ul id="suggestionsList"></ul>
+      </div>
+    </div>
+
+    <!-- Weather Info Section -->
+    <div class="weather-info" id="weatherInfo">
+      
+      <!-- Weather Animated Graphic Box -->
+      <div class="icon-box" id="iconBox">
+        <i id="weatherIcon" class="fa-solid fa-sun weather-graphic"></i>
+      </div>
+
+      <!-- Temperature Display -->
+      <div class="temp-box">
+        <h1 id="temperature">--°C</h1>
+      </div>
+
+      <!-- Condition Text -->
+      <div class="condition-box">
+        <p id="conditionText">Sunny</p>
+      </div>
+
+      <!-- City / Country Name -->
+      <div class="location-box">
+        <h2 id="cityName">Pakistan</h2>
+      </div>
+
+      <!-- Weather Details (Humidity & Wind) -->
+      <div class="details-grid">
+        
+        <!-- Humidity -->
+        <div class="detail-item">
+          <div class="detail-icon">
+            <i class="fa-solid fa-water"></i>
+          </div>
+          <div class="detail-text">
+            <p id="humidity">--%</p>
+            <label>Humidity</label>
+          </div>
+        </div>
+
+        <!-- Wind Speed -->
+        <div class="detail-item">
+          <div class="detail-icon">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+          <div class="detail-text">
+            <p id="windSpeed">-- km/h</p>
+            <label>Wind Speed</label>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Error / Invalid Message Box -->
+    <div class="message-box" id="messageBox">
+      <p id="messageText">invalid your country name</p>
+    </div>
+
+  </div>
+
+  <!-- External JS -->
+  <script src="weather.js"></script>
+</body>
+</html>

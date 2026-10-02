@@ -1,0 +1,392 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b0f19;
+  padding: 15px;
+}
+
+/* ==========================================
+   MAIN WEATHER CARD (Fully Responsive)
+   ========================================== */
+.weather-card {
+  width: 100%;
+  max-width: 380px;
+  height: 580px;
+  background: linear-gradient(165deg, #f39c12 0%, #e67e22 40%, #2c3e50 100%);
+  border-radius: 35px;
+  padding: 28px 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
+              inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.8s ease, transform 0.3s ease;
+}
+
+/* Dynamic Card Themes Based on Weather Condition */
+.weather-card.sunny {
+  background: linear-gradient(165deg, #ff9a9e 0%, #fecfef 30%, #f6d365 70%, #fda085 100%);
+  color: #2c3e50;
+}
+
+.weather-card.sunny .search-box input,
+.weather-card.sunny .search-box button {
+  color: #2c3e50;
+}
+
+
+.weather-card.sunny .temp-box h1,
+.weather-card.sunny .location-box h2,
+.weather-card.sunny .detail-text p {
+  color: #2c3e50;
+}
+
+.weather-card.sunny .detail-text label,
+.weather-card.sunny .condition-box p {
+  color: rgba(44, 62, 80, 0.8);
+}
+
+.weather-card.rainy {
+  background: linear-gradient(165deg, #2b5876 0%, #4e4376 60%, #1e2022 100%);
+}
+
+.weather-card.cloudy {
+  background: linear-gradient(165deg, #606c88 0%, #3f4c6b 60%, #1a1c20 100%);
+}
+
+.weather-card.snowy {
+  background: linear-gradient(165deg, #83a4d4 0%, #b6fbff 100%);
+  color: #2c3e50;
+}
+
+.weather-card.snowy .temp-box h1,
+.weather-card.snowy .location-box h2,
+.weather-card.snowy .detail-text p {
+  color: #1e293b;
+}
+
+.weather-card.stormy {
+  background: linear-gradient(165deg, #141E30 0%, #243B55 60%, #000000 100%);
+}
+
+/* Dynamic Visual Canvas & Animations Overlay */
+.weather-visual-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#weatherCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.sun-flare {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,230,119,0.8) 0%, rgba(255,183,3,0.3) 40%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  animation: pulseSun 4s infinite alternate ease-in-out;
+}
+
+.weather-card.sunny .sun-flare {
+  opacity: 1;
+}
+
+@keyframes pulseSun {
+  0% { transform: scale(0.9); }
+  100% { transform: scale(1.15); }
+}
+
+.lightning-flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ==========================================
+   SEARCH BAR & AUTOCOMPLETE
+   ========================================== */
+.search-container {
+  position: relative;
+  width: 100%;
+  z-index: 20;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  border-radius: 30px;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: lowercase;
+}
+
+.search-box input:focus {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-box button {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.search-box button:hover {
+  background: rgba(255, 255, 255, 0.45);
+  transform: scale(1.05);
+}
+
+/* Suggestions Dropdown Box */
+.suggestions-box {
+  display: none;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: calc(100% - 58px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestions-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.suggestions-box li {
+  padding: 10px 16px;
+  color: #222222;
+  font-size: 13px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background 0.2s ease;
+}
+
+.suggestions-box li:hover {
+  background: rgba(76, 226, 167, 0.3);
+}
+
+.suggestions-box li p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #111111;
+}
+
+.suggestions-box li p small {
+  display: block;
+  font-size: 11px;
+  color: #666666;
+}
+
+/* ==========================================
+   WEATHER DISPLAY AREA
+   ========================================== */
+.weather-info {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.icon-box {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-graphic {
+  font-size: 80px;
+  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.2));
+  animation: floatIcon 3.5s infinite ease-in-out;
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.temp-box h1 {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-top: 5px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.condition-box p {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.location-box h2 {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   DETAILS GRID (HUMIDITY & WIND)
+   ========================================== */
+.details-grid {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-icon i {
+  font-size: 24px;
+  opacity: 0.9;
+}
+
+.detail-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.detail-text p {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.detail-text label {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+/* ==========================================
+   INVALID / ERROR MESSAGE BOX
+   ========================================== */
+.message-box {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  right: 20px;
+  background: rgba(231, 76, 60, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 12px;
+  border-radius: 15px;
+  text-align: center;
+  z-index: 30;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: shake 0.4s ease;
+}
+
+.message-box p {
+  font-size: 13px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* Mobile Screen Responsive Tweaks */
+@media screen and (max-width: 400px) {
+  .weather-card {
+    height: 540px;
+    padding: 22px 16px;
+  }
+  .temp-box h1 {
+    font-size: 54px;
+  }
+  .location-box h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+  .weather-graphic {
+    font-size: 68px;
+  }
+}
