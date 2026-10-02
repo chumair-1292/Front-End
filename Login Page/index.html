@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Lamp Login Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for form icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Div 1: Outer Wrapper -->
+    <div class="wrapper-div">
+        
+        <!-- Div 2: Content Container -->
+        <div class="content-container">
+            
+            <!-- Div 3: Room / Main Application Box -->
+            <div class="room">
+                <!-- Lamp Section -->
+                <div class="lamp-container">
+                    <div class="lamp-head"></div>
+                    <div class="lamp-light"></div>
+                    <div class="cord" id="cord" title="Click or swipe down to pull">
+                        <div class="cord-line"></div>
+                        <div class="cord-handle"></div>
+                    </div>
+                </div>
+
+                <!-- Login Form Container (Hidden by default) -->
+                <div class="login-container" id="loginContainer">
+                    <div class="form-box">
+                        <h2>Welcome Back</h2>
+                        <p>Pull the lamp cord to turn off</p>
+                        <form>
+                            <div class="input-group">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" placeholder="Username" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" placeholder="Password" required>
+                            </div>
+                            <button type="submit" class="sign-btn">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="java.js"></script>
+</body>
+</html>
