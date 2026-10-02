@@ -1,0 +1,221 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for modern mobile browsers */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1050; /* Dark purple background */
+  padding: 16px;
+}
+
+/* ==========================================
+   MAIN TODO CONTAINER CARD (Responsive)
+   ========================================== */
+.todo-card {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styling */
+.header-box h1 {
+  color: #0b1354;
+  font-size: Clamp(22px, 5vw, 28px); /* Responsive Font Size */
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+/* ==========================================
+   INPUT AREA (Responsive Pill Style)
+   ========================================== */
+.input-box {
+  display: flex;
+  align-items: center;
+  background: #edeef0;
+  border-radius: 40px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.input-box input {
+  flex: 1;
+  min-width: 0; /* Prevents overflow in flexbox on mobile */
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 14px 10px 14px 0;
+  font-size: Clamp(14px, 4vw, 16px);
+  color: #333333;
+}
+
+.input-box input::placeholder {
+  color: #999999;
+}
+
+.input-box button {
+  border: none;
+  outline: none;
+  padding: 14px 36px;
+  background: #ff5722; /* Vibrant Orange */
+  color: #ffffff;
+  font-size: Clamp(14px, 4vw, 16px);
+  font-weight: 600;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.input-box button:hover {
+  background: #e64a19;
+}
+
+.input-box button:active {
+  transform: scale(0.97);
+}
+
+/* ==========================================
+   TASK LIST ITEMS (Responsive & Scrollable)
+   ========================================== */
+.list-box {
+  max-height: 55vh; /* Scrollable if tasks exceed mobile height */
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Custom Scrollbar */
+.list-box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.list-box::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.list-box ul {
+  list-style: none;
+}
+
+.list-box ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 6px;
+  user-select: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  gap: 12px;
+  word-break: break-word; /* Prevents long text overflow */
+}
+
+.list-box ul li:last-child {
+  border-bottom: none;
+}
+
+/* Left Content Area (Check Circle + Text) */
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0; /* Ensures word-break works properly inside flex item */
+}
+
+/* Circle Checkbox */
+.check-circle {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.check-circle i {
+  color: #ffffff;
+  font-size: 12px;
+  display: none;
+}
+
+/* Task Title Text */
+.task-content p {
+  font-size: Clamp(14px, 4vw, 16px);
+  color: #333333;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+/* Completed / Checked State */
+.list-box ul li.completed .check-circle {
+  background: #ff5722;
+  border-color: #ff5722;
+}
+
+.list-box ul li.completed .check-circle i {
+  display: block;
+}
+
+.list-box ul li.completed p {
+  color: #888888;
+  text-decoration: line-through;
+}
+
+/* Delete Cross Icon */
+.delete-btn {
+  color: #777777;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s ease, transform 0.1s ease;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover {
+  color: #ff5722;
+  transform: scale(1.15);
+}
+
+/* ==========================================
+   MEDIA QUERIES (Extra Mobile Optimizations)
+   ========================================== */
+@media screen and (max-width: 480px) {
+  .todo-card {
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+
+  .input-box {
+    padding-left: 16px;
+    margin-bottom: 20px;
+  }
+
+  .input-box button {
+    padding: 12px 24px;
+  }
+
+  .task-content {
+    gap: 10px;
+  }
+}
