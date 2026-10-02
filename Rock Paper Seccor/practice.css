@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background-color: #081b29;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 0;
+}
+
+.navbar h1 {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+/* GAME CONTAINER */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+/* CHOICES BUTTONS */
+.choices-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.choice-btn {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid #333333;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  outline: none;
+}
+
+.choice-btn:hover {
+  transform: scale(1.08);
+  border-color: #081b29;
+  
+}
+
+.emoji-icon {
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+/* SCOREBOARD */
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 30px;
+}
+
+.score-box {
+  text-align: center;
+}
+
+.score-box span {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.score-box p {
+  font-size: 1.8rem;
+  color: #111111;
+}
+
+/* STATUS MESSAGE BADGE */
+.status-container {
+  margin-top: 10px;
+}
+
+.status-msg {
+  background-color: #081b29;
+  color: #ffffff;
+  font-size: 1.3rem;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+/* WIN / LOSE COLOR HIGHLIGHTS */
+.status-msg.win {
+  background-color: #008000;
+}
+
+.status-msg.lose {
+  background-color: #cc0000;
+}
+
+.status-msg.draw {
+  background-color: #081b29;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 480px) {
+  .choice-btn {
+    width: 85px;
+    height: 85px;
+  }
+
+  .emoji-icon {
+    font-size: 2.4rem;
+  }
+
+  .scoreboard {
+    gap: 40px;
+  }
+
+  .score-box span {
+    font-size: 1.8rem;
+  }
+
+  .score-box p {
+    font-size: 1.4rem;
+  }
+}
