@@ -1,0 +1,74 @@
+import Swiper, { type Slide } from "./components/Swiper";
+
+const slides: Slide[] = [
+  {
+    id: "1",
+    image: "https://i.ibb.co/MxYxnb5J/IMG-20260427-WA0005-1.jpg",
+    title: "Friend Circle",
+    subtitle: "Together Forever",
+    description:
+      "True friends are the family we choose for ourselves. They stand by us through every storm, celebrate our victories, and make the journey of life beautiful.",
+    accent: "#f97316",
+  },
+  {
+    id: "2",
+    image: "https://i.ibb.co/MxYxnb5J/IMG-20260427-WA0005-1.jpg",
+    title: "Memories That Last",
+    subtitle: "Cherished Moments",
+    description:
+      "Every laugh shared, every tear wiped, every secret kept — these are the threads that weave the fabric of true friendship.",
+    accent: "#ec4899",
+  },
+  {
+    id: "3",
+    image: "https://i.ibb.co/MxYxnb5J/IMG-20260427-WA0005-1.jpg",
+    title: "Unbreakable Bonds",
+    subtitle: "Soul Connections",
+    description:
+      "Distance means nothing when someone means everything. Friends connect hearts across any divide, making the world feel smaller and warmer.",
+    accent: "#8b5cf6",
+  },
+  {
+    id: "4",
+    image: "https://i.ibb.co/MxYxnb5J/IMG-20260427-WA0005-1.jpg",
+    title: "Friends Are Stars",
+    subtitle: "Guiding Lights",
+    description:
+      "You don't need to see them every day to feel their presence. Like stars, true friends shine brightest when the night is darkest.",
+    accent: "#06b6d4",
+  },
+  {
+    id: "5",
+    image: "https://i.ibb.co/MxYxnb5J/IMG-20260427-WA0005-1.jpg",
+    title: "The Circle of Trust",
+    subtitle: "Friend Circle",
+    description:
+      "In a world of change, friends remain our constant. They are the mirrors that reflect our best selves and the shoulders that hold us up.",
+    accent: "#22c55e",
+  },
+];
+
+function App() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-12 sm:px-8 lg:px-16">
+      <header className="mx-auto mb-10 max-w-6xl text-center">
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-400">
+          Celebrating Friendship
+        </p>
+        <h1 className="mt-3 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          Friend Circle
+        </h1>
+        <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-400">
+          A tribute to the bonds that define us. Swipe through to celebrate the
+          beauty of true friendship.
+        </p>
+      </header>
+
+      <main className="mx-auto max-w-6xl">
+        <Swiper slides={slides} />
+      </main>
+    </div>
+  );
+}
+
+export default App;
