@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background-color: #081b29;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 0;
+}
+
+.navbar h1 {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+/* GAME CONTAINER */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 20px;
+}
+
+/* STATUS MESSAGE */
+.status-msg {
+  background-color: #081b29;
+  color: #ffffff;
+  font-size: 1.3rem;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 25px;
+  min-width: 220px;
+}
+
+/* TIC TAC TOE BOARD */
+/* TIC TAC TOE BOARD */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* FIXED SIZE CELL (BOX) */
+.cell {
+  width: 90px;
+  height: 90px;
+  background-color: #ffffff;
+  border: 4px solid #081b29;
+  border-radius: 12px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #081b29;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  /* Resize rokne ke liye */
+  box-sizing: border-box;
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.cell:hover:not(:disabled) {
+  background-color: #f0f4f8;
+}
+
+.cell[data-player="X"] {
+  color: #ff5000;
+}
+
+.cell[data-player="O"] {
+  color: #081b29;
+}
+
+.cell:hover:not(:disabled) {
+  background-color: #f0f4f8;
+  transform: scale(1.02);
+}
+
+.cell[data-player="X"] {
+  color: #ff5000;
+}
+
+.cell[data-player="O"] {
+  color: #081b29;
+}
+
+/* RESET BUTTON */
+.reset-btn {
+  margin-top: 25px;
+  background-color: #081b29;
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.reset-btn:hover {
+  opacity: 0.9;
+}
