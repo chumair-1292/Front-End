@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #0d0d11;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 20px;
+  user-select: none;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.header-box {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+
+.header-box h1 {
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 700;
+  
+}
+
+.header-box .subtitle {
+  font-size: clamp(16px, 3.5vw, 22px);
+  color: #4382ec;
+}
+
+.scene {
+  width: 100%;
+  height: 440px;
+  perspective: 1000px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+
+.scene:active {
+  cursor: grabbing;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card {
+  position: absolute;
+  width: clamp(200px, 24vw, 270px);
+  height: clamp(300px, 36vw, 380px);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.dots-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #4382ec;
+  width: 32px;
+  border-radius: 10px;
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
