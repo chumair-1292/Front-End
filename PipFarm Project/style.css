@@ -1,0 +1,2722 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: kinn;
+  font-weight: 400;
+  src: url(Kinn-Book\ \(1\).woff);
+}
+@font-face {
+  font-family: Helvetica;
+  font-weight: 400;
+  src: url(Helvetica-Bold.woff);
+}
+/* --- Reset & Variables --- */
+
+:root {
+  --bg-dark: #06150d;
+  --card-bg: #000000;
+  --text-light: #ffffff;
+  --text-muted: #a0a5a2;
+  --primary-green: #65c443;
+  --border-color: #1b3823;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-section {
+  
+  background-image: url(pics/3d-rendering-computer-desk\ 1.png);
+  object-fit: cover;
+  width: 100%;
+  
+    min-height: 100vh;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 13px;
+  text-decoration: none;
+}
+.body {
+  background: #031d17;
+}
+.btn-primary {
+  background-color: var(--primary-green);
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #52a634;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-light);
+  border: 1px solid #333;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #555;
+}
+
+/* --- Header --- */
+.header {
+  border-bottom: 1px solid #37b359;
+  padding: 20px 30px;
+  position: sticky;
+  top: 0;
+
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  background-color: rgb(11 12 12 / 0%);
+}
+.logo img {
+  width: 130px;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav {
+  padding-left: 100px;
+}
+.header-actions {
+  padding-right: 80px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-link {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: green;
+}
+
+/* Menu Toggle (Mobile) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-light);
+  border-radius: 2px;
+}
+
+/* --- Main Content --- */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+}
+
+/* Central Monitor Display Box */
+.mockup-display {
+  height: 400px;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  max-width: 630px;
+  border-radius: 20px;
+  padding: 50px 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-left: -32px;
+  margin-top: 20px;
+}
+
+.hero-title {
+  margin-bottom: 24px;
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 54.45px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.highlight {
+  color: var(--primary-green);
+}
+
+.hero-subtitle {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 509px;
+  margin: 0 auto 35px auto;
+}
+
+.cta-group {
+  max-width: 418px;
+  margin-left: 75px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* --- Featured Section --- */
+.featured-section {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 40px;
+
+  padding-bottom: 20px;
+}
+
+.featured-title {
+  margin-bottom: 50px;
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+.logo-grid {
+  max-width: 1200px ;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(31, 121, 84);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  opacity: 0.6;
+  padding: 0px 120px 40px 120px;
+  transition: 0.1s ease-in-out;
+}
+
+.logo-item {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.logo-grid:hover {
+  opacity: 1.6;
+  color: #61c038;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+
+
+
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none; /* Initially hidden on mobile */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
+  }
+
+  .nav.active {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header-actions {
+    display: none; /* Hide login button on mobile or move it into mobile nav */
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+
+
+  .cta-group {
+    flex-direction: column;
+    gap: 12px;
+
+
+
+  }
+
+  .logo-grid {
+    justify-content: center;
+  }
+}
+
+/* --- Reset & Base Variables --- */
+
+.container {
+  margin: 0 auto;
+  padding: 40px 100px;
+}
+
+/* --- Section Header --- */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 42px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: antiquewhite;
+}
+
+.highlight {
+  color: var(--primary-green);
+}
+
+.slider-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.control-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+/* --- Slider Track Layout --- */
+.slider-wrapper {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  margin-bottom: 40px;
+}
+
+.slider-wrapper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  transition: transform 0.4s ease-out;
+}
+
+/* --- Cards Styling --- */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Featured card glow effect */
+.card-featured {
+  border-color: rgba(97, 192, 56, 0.3);
+  box-shadow: 0 0 25px rgba(97, 192, 56, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.card-icon {
+  background: #0f2e1a;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.card-amount {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.card-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 35px;
+}
+
+.card-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-white);
+  font-size: 1.05rem;
+}
+
+.check-icon {
+  color: var(--primary-green);
+  font-size: 0.9rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.fee-label {
+  color: var(--text-white);
+  font-size: 1.1rem;
+}
+
+.fee-amount {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* --- Buttons --- */
+.btn {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-active {
+  background-color: var(--primary-green);
+  color: #03140a;
+}
+
+.btn-active:hover {
+  background-color: #52a52e;
+}
+
+.btn-muted {
+  background-color: #0f2517;
+  color: var(--text-muted);
+}
+
+.btn-muted:hover {
+  background-color: #173321;
+  color: var(--text-white);
+}
+
+/* --- Bottom Features Bar --- */
+.features-bar {
+  background: rgba(6, 21, 12, 0.8);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 15px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.check-green {
+  color: var(--primary-green);
+}
+
+/* --- Responsive Layout Rules --- */
+@media (max-width: 992px) {
+  .features-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    /* Set flexible structural layout parameters for responsive JS math widths */
+    grid-template-columns: repeat(3, 85vw);
+    gap: 20px;
+  }
+
+  .slider-wrapper {
+    scroll-snap-type: x mandatory;
+  }
+
+  .card {
+    scroll-snap-align: center;
+  }
+
+  .features-bar {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}
+
+/* --- Base Theme Setup --- */
+* :root {
+  --bg-dark: #03140a;
+  --card-bg: rgba(9, 29, 17, 0.4);
+  --border-color: #12311b;
+  --primary-green: #61c038;
+  --text-white: #ffffff;
+  --text-muted: #829286;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* --- Heading Block --- */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--primary-green);
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.title-light {
+  color: var(--text-white);
+  font-weight: 400;
+}
+
+/* --- Features Grid Layout Engine --- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Clean 2-column grid layout */
+  gap: 24px;
+}
+
+/* --- The Card Block Styles --- */
+.feature-card {
+  background-color: #112923;
+
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(97, 192, 56, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-heading {
+  margin-bottom: 12px;
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+.card-description {
+  color: var(--text-muted);
+
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+/* --- Bright Green Floating App Icons --- */
+.icon-box {
+  background-color: var(--primary-green);
+  color: #03140a;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  flex-shrink: 0; /* Prevents the icon container from crushing text inside small cards */
+  box-shadow: 0 4px 12px rgba(97, 192, 56, 0.3);
+}
+
+/* --- Single Centered Footer Row Component --- */
+.bottom-centered-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.wide-card {
+  width: 50%; /* Perfectly matches the column sizes directly above it */
+}
+
+/* --- Responsive Media Viewport Breaks --- */
+@media (max-width: 850px) {
+  .wide-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.9rem;
+    margin-bottom: 35px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr; /* Drop into linear single column cards stack layout */
+    gap: 16px;
+  }
+
+  .bottom-centered-row {
+    margin-top: 16px;
+  }
+
+  .feature-card {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .card-heading {
+    font-size: 1.2rem;
+  }
+}
+
+.pricing-section {
+  width: 100%;
+  padding: 40px 80px;
+}
+.nutshell-section {
+  width: 100%;
+  padding: 40px 80px;
+}
+
+/* --- Unique Process Section Styles --- */
+.pipfarm-process-section {
+  /* Fallback theme background match */
+  color: #ffffff;
+  font-family: "Segoe UI", Roboto, Helvetica, sans-serif;
+  padding: 80px 80px;
+}
+
+.pipfarm-process-container {
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.pipfarm-process-title {
+  text-align: center;
+  margin-bottom: 60px;
+  color: #ffffff;
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.pipfarm-process-highlight {
+  color: #61c038;
+  font-weight: 700;
+}
+
+/* Flex Container Layout */
+.pipfarm-process-steps-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.pipfarm-process-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Rounded Square Digit Box */
+.pipfarm-process-badge {
+  background: #112923;
+  border: 1px solid #12311b;
+  color: #61c038;
+  font-size: 1.15rem;
+  font-weight: 600;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.pipfarm-process-heading {
+  margin-bottom: 14px;
+  color: #ffffff;
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 27px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.pipfarm-process-text {
+  color: #829286;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+/* --- Mobile Responsive Queries --- */
+@media (max-width: 900px) {
+  .pipfarm-process-steps-wrapper {
+    gap: 20px;
+  }
+  .pipfarm-process-heading {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pipfarm-process-steps-wrapper {
+    flex-direction: column; /* Switches to vertical stack layout */
+    gap: 40px;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* Vertical connector baseline track */
+  .pipfarm-process-steps-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 32px;
+    top: 0;
+    bottom: 64px;
+    width: 1px;
+    background-color: #12311b;
+    z-index: 0;
+  }
+
+  .pipfarm-process-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .pipfarm-process-badge {
+    margin-bottom: 0;
+    z-index: 1; /* Sits clean over the connector line background track */
+  }
+
+  .pipfarm-process-card-content {
+    padding-top: 10px;
+  }
+}
+
+/* --- CTA Section Theme Setup --- */
+.pf-cta-section {
+   /* Dark background match */
+  padding: 100px 0;
+  font-family: "Segoe UI", Roboto, Helvetica, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.pf-cta-container {
+  margin: 0 auto;
+  padding: 0 100px;
+  position: relative;
+}
+
+/* --- Main Card Container with Rounded Borders --- */
+.pf-cta-box {
+  background: rgb(49 109 73 / 40%);
+ 
+  border: 1px solid rgba(18, 49, 27, 0.8);
+  border-radius: 32px;
+  padding: 60px 40px 40px 40px;
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Sits above the background decoration leaf */
+  margin-top: 80px; /* Leaves room for the image spilling out top */
+}
+
+/* --- Top Pop-Out Floating Artwork Placement --- */
+.pf-cta-graphic-wrapper {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -60%
+  ); /* Shifts image up past the card boundary line */
+  width: 100%;
+  max-width: 465px;
+}
+
+.pf-cta-main-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.7));
+}
+
+/* --- Content Styling Layout --- */
+.pf-cta-content {
+  max-width: 735px;
+  margin: 0 auto;
+  padding-top: 60px; /* Adds spatial separation below the image footprint */
+}
+
+.pf-cta-heading {
+  margin-bottom: 20px;
+  margin-top: 85px;
+  font-family: Kinn;
+  font-weight: 700;
+  font-style: Kinn Bold;
+  font-size: 60px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #88df6b;
+}
+
+.pf-cta-subtext {
+  max-width: 460px;
+  margin: 0 auto 30px auto;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 21px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* --- Action Button --- */
+.pf-cta-btn {
+  background-color: #61c038;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 22.6px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.pf-cta-btn:hover {
+  background-color: #52a52e;
+  transform: translateY(-2px);
+}
+
+/* --- Background Money Leaf Asset Layer Positioning --- */
+.pf-cta-bg-decoration {
+  position: absolute;
+  right: -40px;
+  bottom: -100px;
+  width: 280px;
+  z-index: 1;
+  pointer-events: none; /* Prevents background graphics from blocking link clicks */
+  opacity: 0.85;
+}
+
+.pf-cta-leaf-image {
+  width: 100%;
+  height: auto;
+}
+
+/* --- Layout Responsiveness Rule Breakpoints --- */
+@media (max-width: 768px) {
+  .pf-cta-section {
+    padding: 20px 0;
+  }
+
+  .pf-cta-box {
+    padding: 40px 24px 32px 24px;
+    margin-top: 60px;
+    border-radius: 24px;
+  }
+
+  .pf-cta-graphic-wrapper {
+    max-width: 260px;
+  }
+
+  .pf-cta-content {
+    padding-top: 45px;
+  }
+
+  .pf-cta-heading {
+    font-size: 1.8rem;
+  }
+
+  /* Hide or reduce background overlap decorations on tighter screens */
+  .pf-cta-bg-decoration {
+    width: 180px;
+    right: -20px;
+    bottom: -60px;
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .pf-cta-graphic-wrapper {
+    max-width: 230px;
+    top: 40px;
+  }
+  .pf-cta-heading {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+  }
+  .pf-cta-subtext{
+    font-size: 15px;
+    margin: 0 auto 20px auto;
+  }
+  .pf-cta-content{
+    padding-top: 0px;
+  }
+  .pf-cta-btn {
+    font-size: 18px;
+    width: 60%; /* Spans full horizontal container dimension on mobile */
+  }
+}
+
+/* --- Global Theme Architecture --- */
+.pf-payout-section {
+  
+  color: #ffffff;
+  padding: 80px 100px;
+  font-family: "Segoe UI", Roboto, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.pf-payout-container {
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Typography Formatting --- */
+.pf-payout-header,
+.pf-payout-footer {
+  text-align: center;
+}
+
+.pf-payout-title {
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.pf-payout-badge {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #88df6b;
+  margin-bottom: 15px;
+}
+
+.pf-payout-lead {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #829286;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+/* --- Interactive Workspace Layout --- */
+.pf-chart-workspace {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  position: relative;
+  padding-left: 20px; /* Leave space for rotated left axis title text */
+}
+
+/* Y Axis Typography Column */
+.pf-axis-y {
+  font-family: Helvetica;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 300px; /* Fixed anchor block container metrics baseline height */
+  padding-bottom: 30px; /* Offset alignment factor matching base track */
+}
+
+/* Main Display Sandbox */
+.pf-chart-display {
+  flex: 1;
+  height: 300px;
+  position: relative;
+}
+
+/* Background Grid Lines */
+.pf-grid-lines {
+  position: absolute;
+  inset: 0 0 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.pf-line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed rgba(18, 49, 27, 0.6);
+}
+
+/* Render first baseline stroke solid */
+.pf-grid-lines .pf-line:last-child {
+  border-bottom-style: solid;
+  border-bottom-color: rgba(18, 49, 27, 1);
+}
+
+/* SVG Trend Layout Fitment */
+.pf-chart-vectors {
+  position: absolute;
+  inset: 0 0 30px 0;
+  width: 100%;
+  height: calc(100% - 30px);
+  overflow: visible;
+}
+
+/* --- Absolute Dynamic Vertical Stem Bars Layer --- */
+.pf-markers-layer {
+  position: absolute;
+  inset: 0 0 0 0;
+  pointer-events: none;
+}
+
+.pf-marker-col {
+  position: absolute;
+  left: var(--left-pct);
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  transform: translateX(
+    -50%
+  ); /* Centers the element precisely on its percentages */
+}
+
+/* Data Intersection White Nodes */
+.pf-node-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 10px #ffffff;
+  z-index: 5;
+}
+
+/* Dynamic dot node layout elevations matching mathematical vector path curve coordinates */
+.pf-marker-col[style*="25%"] .pf-node-dot {
+  top: calc(70% - 4px);
+}
+.pf-marker-col[style*="50%"] .pf-node-dot {
+  top: calc(45% - 4px);
+}
+.pf-marker-col[style*="75%"] .pf-node-dot {
+  top: calc(25% - 4px);
+}
+.pf-marker-col[style*="90%"] .pf-node-dot {
+  top: calc(10% - 4px);
+}
+
+/* Vertical Dropdown Stem Lines */
+.pf-stem-line {
+  position: absolute;
+  bottom: 30px;
+  width: 1px;
+  background-color: rgba(30, 60, 40, 0.8);
+}
+
+.pf-marker-col[style*="25%"] .pf-stem-line {
+  top: 70%;
+}
+.pf-marker-col[style*="50%"] .pf-stem-line {
+  top: 45%;
+}
+.pf-marker-col[style*="75%"] .pf-stem-line {
+  top: 25%;
+}
+.pf-marker-col[style*="90%"] .pf-stem-line {
+  top: 10%;
+}
+
+/* Bottom Data Metric Labels */
+.pf-marker-label {
+  font-family: Helvetica;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  position: absolute;
+  bottom: 5px;
+  color: #ffffff;
+}
+
+/* Rotated Left Y-Axis Title */
+.pf-axis-title-rotated {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  left: -130px;
+  top: calc(50% - 15px);
+  transform: rotate(90deg) translateY(-50%);
+}
+
+/* --- Section Bottom Footer Area --- */
+.pf-footer-subheading {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #88df6b;
+  margin-bottom: 10px;
+}
+
+.pf-footer-text {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #829286;
+  max-width: 875px;
+  margin: 0 auto;
+}
+
+/* --- Responsive Scalability Adaptations --- */
+@media (max-width: 600px) {
+  .pf-payout-title {
+    font-size: 1.9rem;
+  }
+
+  .pf-chart-workspace {
+    padding-left: 10px;
+  }
+
+  .pf-axis-title-rotated {
+    display: none; /* Hide the vertical text label on mobile to gain width layout space */
+  }
+
+  .pf-axis-y {
+    font-size: 0.75rem;
+  }
+
+  .pf-marker-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* --- Core Styles & Context Setup --- */
+.pf-scaling-section {
+  
+  color: #ffffff;
+  padding: 40px 0;
+  font-family: "Segoe UI", Roboto, Helvetica, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.pf-scaling-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Header Layout Structure --- */
+.pf-scaling-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pf-scaling-title {
+  font-family: Kinn;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.pf-scaling-subtitle {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #88df6b;
+  margin-bottom: 15px;
+}
+
+.pf-scaling-lead {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #829286;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+/* --- Scroll Container Mechanism --- */
+.pf-table-scroll-viewport {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #12311b transparent;
+}
+
+/* Custom Scrollbar Polish for Webkit Engines */
+.pf-table-scroll-viewport::-webkit-scrollbar {
+  height: 6px;
+}
+.pf-table-scroll-viewport::-webkit-scrollbar-thumb {
+  background-color: #12311b;
+  border-radius: 10px;
+}
+
+/* --- Table Grid Core Layout --- */
+.pf-scaling-table {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 750px; /* Forces stable column proportions across smaller viewports */
+  padding: 10px 0;
+}
+
+/* Row Pill Block Layout */
+.pf-table-row {
+  background: #112923;
+  border: 1px solid rgba(18, 49, 27, 0.8);
+  border-radius: 100px; /* Generates the signature sleek rounded pill look */
+  padding: 22px 40px;
+  display: grid;
+  grid-template-columns: 2fr repeat(5, 1fr); /* Standard label width ratio proportions */
+  align-items: center;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.pf-table-row:hover {
+  background: rgba(9, 29, 17, 0.6);
+  border-color: rgba(97, 192, 56, 0.3);
+}
+
+/* Column Data Formatting */
+.pf-cell-label {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #a4b3a8;
+  text-align: left;
+}
+
+.pf-cell-value {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* --- Left Accent Leaf Graphic Placement --- */
+.pf-scaling-bg-decoration {
+  position: absolute;
+  left: -175px;
+  bottom: -92px;
+  width: 320px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1.65;
+}
+
+.pf-scaling-leaf-img {
+  width: 100%;
+  height: auto;
+}
+
+/* --- Layout Responsiveness Breaks --- */
+@media (max-width: 768px) {
+  .pf-scaling-section {
+    padding: 60px 0;
+  }
+
+  .pf-scaling-title {
+    font-size: 2rem;
+  }
+
+  .pf-table-row {
+    padding: 18px 24px;
+  }
+
+  /* Dim down decorative clutter over crowded mobile canvases */
+  .pf-scaling-bg-decoration {
+    width: 200px;
+    left: -80px;
+    opacity: 0.25;
+  }
+}
+
+/* --- Testimonials Section Styling Environment --- */
+.pf-reviews-section {
+  
+  color: #ffffff;
+  padding: 80px 0;
+  font-family: "Segoe UI", Roboto, Helvetica, sans-serif;
+}
+
+.pf-reviews-container {
+  max-width: 1100px;
+  margin: 0 0 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Header & Control Arrows Layout --- */
+.pf-reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.pf-reviews-title {
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+.pf-reviews-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.pf-reviews-arrow {
+  background: transparent;
+  border: 1px solid #12311b;
+  color: #829286;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.pf-reviews-arrow:hover {
+  border-color: #61c038;
+  color: #61c038;
+}
+
+/* --- Hidden Masking Window Viewport --- */
+.pf-reviews-slider-window {
+  width: 100%;
+  overflow: hidden; /* Clips out the cards waiting out out of view bounds */
+  padding: 10px 0;
+}
+
+/* Moving Carousel Core Assembly Track */
+.pf-reviews-slider-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Ultra smooth slide motion curve */
+  will-change: transform;
+}
+
+/* --- Base Structural Card Properties --- */
+.pf-review-card {
+  flex: 0 0 calc(33.333% - 16px); /* Fixes exactly 3 cards side-by-side on viewport monitors */
+  background: #112923;
+  border: 1px solid #12311b;
+  border-radius: 24px;
+  padding: 32px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* --- Left Highlight Brand Card Variant --- */
+.pf-card-brand {
+  background: #61c038;
+  border: none;
+  color: #03140a;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pf-brand-heading {
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.pf-brand-stars {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+}
+
+.pf-brand-meta {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+/* --- Internal Standard Review Content Parts --- */
+.pf-card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pf-card-stars {
+  color: #ffffff;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.pf-card-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #12311b;
+}
+
+.pf-card-body-text {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #a4b3a8;
+}
+
+/* --- Fully Fluid Responsive Breakpoints --- */
+@media (max-width: 992px) {
+  .pf-review-card {
+    flex: 0 0 calc(50% - 12px); /* Switches layout dynamically to 2 cards view scale width */
+  }
+}
+
+@media (max-width: 650px) {
+  .pf-reviews-title {
+    font-size: 1.5rem;
+  }
+
+  .pf-review-card {
+    flex: 0 0 100%; /* Spans single column width sizing viewport on compact smartphones */
+  }
+}
+
+/* Container & Header */
+.blog-archive-container {
+  width: 100%;
+  text-align: center;
+  padding: 60px 80px;
+}
+
+.blog-archive-title {
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+/* Grid System */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  justify-content: center;
+}
+
+/* Card Styling */
+.blog-card {
+  background: #112923; /* Lighter container green */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Image */
+.blog-image-wrapper {
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.blog-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Typography Inside Content */
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-title {
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.blog-snippet {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 135%;
+  letter-spacing: 0%;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+/* Hidden expanded content style */
+.blog-full-text {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    margin 0.3s ease;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.blog-full-text p {
+  padding-bottom: 16px;
+}
+
+/* Active State for Expanded Content */
+.blog-card.is-expanded .blog-full-text {
+  max-height: 200px; /* Adjust maximum height dynamically if content grows */
+}
+
+/* Button */
+.blog-read-more-btn {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 135%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin-top: auto;
+  width: 100%;
+  background: #132e22;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.blog-read-more-btn:hover {
+  background: #1a3e2e;
+  color: #ffffff;
+}
+
+/* Section Wrapper Layout */
+.faq-section {
+  padding: 60px 100px;
+  width: 100%;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* Left Column Styling */
+.faq-left-column {
+  flex: 1;
+  max-width: 400px;
+}
+
+.faq-main-title {
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 40px;
+  line-height: 45px;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.faq-see-more-btn {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  background: #6ebd45; /* Vibrant green button color */
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(110, 189, 69, 0.3);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.faq-see-more-btn:hover {
+  background: #5fa33b;
+  transform: translateY(-2px);
+}
+
+/* Right Column Accordion Styling */
+.faq-accordion-container {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background-color: #112923; /* Slate/dark green box fill */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Accordion Clickable Header */
+.faq-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+}
+
+.faq-question {
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+/* Pure CSS Arrow Indicator */
+.faq-arrow-icon {
+  width: 12px;
+  height: 12px;
+  border-right: 3px solid #6ebd45;
+  border-bottom: 3px solid #6ebd45;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+/* Active Open States */
+.faq-item.active .faq-arrow-icon {
+  transform: rotate(-135deg); /* Flips arrow upward */
+}
+
+/* Collapsible Content Wrapper */
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-content {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 125%;
+  letter-spacing: 0%;
+  padding: 0 24px 24px 24px;
+  color: #b3c5be;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 900px) {
+  .faq-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .faq-left-column {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .faq-main-title {
+    font-size: 2.2rem;
+  }
+
+  .faq-question {
+    font-size: 1.15rem;
+  }
+}
+
+/* Base Theme Setup */
+
+.first-slider-section {
+  padding: 20px 80px;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Header Context Box */
+.first-slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.first-slider-main-title {
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 42px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+.first-slider-main-title span {
+  color: #6ebd45; /* Highlights vibrant green text */
+}
+
+/* Control Navigation Handles */
+.first-slider-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.first-slider-arrow-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b3c5be;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.first-slider-arrow-btn:hover {
+  border-color: #6ebd45;
+  color: #6ebd45;
+}
+
+/* Slider Track Viewport Window */
+.first-slider-window {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.first-slider-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+}
+
+/* Slider Custom Cards */
+.first-slider-card {
+  background: #112923;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 32px 24px;
+  flex: 0 0 calc((100% - 48px) / 3); /* default 3 items visible width */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Default focused highlighted element style matches left column green shadow glow */
+.first-slider-card.active-tier {
+  border-color: rgba(110, 189, 69, 0.3);
+  box-shadow: 0 0 25px rgba(110, 189, 69, 0.15);
+}
+
+.first-slider-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.first-slider-icon-badge {
+  background: rgba(110, 189, 69, 0.12);
+  color: #6ebd45;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-slider-icon-badge svg {
+  width: 22px;
+  height: 22px;
+}
+
+.first-slider-amount {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Features List Container */
+.first-slider-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.first-slider-features li {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 22px;
+  line-height: 180%;
+  letter-spacing: 0%;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.first-slider-check {
+  color: #6ebd45;
+  font-weight: bold;
+}
+
+/* Pricing tags */
+.first-slider-pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.first-slider-label {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 26px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.first-slider-price {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Button variants */
+.first-slider-action-btn {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  cursor: pointer;
+  border: none;
+  background: #041c11;
+  color: #ffffff;
+
+  transition: all 0.2s ease;
+}
+
+.first-slider-action-btn:hover {
+  background: #193d2d;
+  color: #ffffff;
+}
+
+.first-slider-btn-highlight {
+  background: #6ebd45;
+  color: #ffffff;
+}
+
+.first-slider-btn-highlight:hover {
+  background: #5fa33b;
+}
+
+/* Grid Matrix Highlights Box at bottom */
+.first-slider-highlights-grid {
+  background: #112923;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  margin-top: 40px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.first-slider-highlight-item {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* --- Media Responsiveness break lines --- */
+@media (max-width: 1024px) {
+  .first-slider-card {
+    flex: 0 0 calc((100% - 24px) / 2); /* Shifts smoothly to dual frame */
+  }
+  .first-slider-highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .first-slider-main-title {
+    font-size: 1.8rem;
+  }
+  .first-slider-card {
+    flex: 0 0 100%; /* Becomes standalone full content slide carousel frame */
+  }
+  .first-slider-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer Box Container */
+.blog-footer {
+  padding: 60px 40px 40px 40px;
+  width: 100%;
+}
+
+/* Multi-column alignment block */
+.blog-footer-inner {
+  padding-top: 50px;
+  border-top: 1px solid rgba(31, 121, 84);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr 1.5fr;
+  gap: 30px;
+  padding-bottom: 50px;
+}
+
+/* Brand Section Properties */
+.blog-footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  max-width: 285px;
+}
+
+.blog-footer-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.blog-footer-logo-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.blog-footer-logo-text {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.blog-footer-brand-text {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 17px;
+  line-height: 125%;
+  letter-spacing: 0%;
+  color:#29403a;
+  transition: color 0.2s ease;
+
+}
+.blog-footer-brand-text:hover{
+  color: #6ebd45;
+}
+/* Structural Header Lists */
+.blog-footer-links-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-footer-heading {
+  font-family: Helvetica;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 17px;
+  line-height: 125%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.blog-footer-links-list {
+  list-style: none;
+}
+
+.blog-footer-links-list li {
+  margin-bottom: 14px;
+}
+
+.blog-footer-links-list a {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: 0%;
+  color: #29403a;
+
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-footer-links-list a:hover {
+  color: #6ebd45; /* Brand green color pop on cursor hover */
+}
+
+/* Social Link Flexbox */
+.blog-footer-socials {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.blog-footer-social-link {
+  color: #3b5247; /* Default matches text opacity */
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.blog-footer-social-link:hover {
+  color: #6ebd45; /* Smooth hover transition to corporate green */
+  transform: translateY(-2px);
+}
+
+/* Bottom Disclaimer Styling */
+.blog-footer-disclaimer {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.blog-footer-disclaimer p {
+  
+   transition: color 0.2s ease;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 17px;
+  line-height: 125%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #29403a;
+  max-width: 1090px;
+  margin: 0 auto;
+}
+.blog-footer-disclaimer:hover p{
+  color: #6ebd45;
+}
+/* --- Responsive Media Viewport Configurations --- */
+@media (max-width: 1024px) {
+  .blog-footer-inner {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .blog-footer-brand-col {
+    max-width: 100%;
+    grid-column: span 4;
+    margin-bottom: 20px;
+  }
+  .blog-footer-links-col{
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-footer {
+    padding: 40px 24px;
+  }
+  .blog-footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+  .blog-footer-brand-col {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .blog-footer-brand-col {
+    grid-column: span 1;
+  }
+}
+
+/* Base Page Resets & Colors */
+
+/* Outer Layout Frame */
+.footer-part-2-section {
+  background-position: center;
+  background-image: url(pics/download\ \(20\)\ 1.png);
+  width: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  position: relative;
+}
+
+.footer-gradient1{
+  height: 80px;
+  background: linear-gradient(
+        to top,
+        transparent 0%,     /* Top */
+        #031D17 68%    /* Bottom */
+    );
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+}
+.main-footer-section{
+   height: 80px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,     /* Top */
+        #031D17 68%   /* Bottom */
+    );
+  position: absolute;
+  bottom:-20px;
+  left: 0;
+  width: 100%;
+}
+.footer-gradient2{
+    height: 80px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,     /* Top */
+        #031D17 68%   /* Bottom */
+    );
+  position: absolute;
+  bottom:-20px;
+  left: 0;
+  width: 100%;
+}
+
+/* Core Container Panel matching image canvas */
+.footer-part-2-container {
+  border: 1px solid rgba(255, 255, 255, 0.04);
+
+  position: relative;
+  padding: 90px 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 685px;
+}
+
+/* Background Atmospheric Shading Layouts */
+.footer-part-2-bg-mountains {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.7;
+  z-index: 1;
+}
+
+/* Pure CSS Chart Grid Bars Vector Mimic */
+.footer-part-2-bg-charts {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.15;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.footer-part-2-chart-bar {
+  position: absolute;
+  bottom: 0;
+  left: var(--x);
+  width: 40px;
+  height: var(--h);
+  background: linear-gradient(to top, #6ebd45, transparent);
+  filter: blur(2px);
+  border-radius: 4px 4px 0 0;
+}
+
+/* Front Typography Layer */
+.footer-part-2-content {
+  max-width: 540px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-part-2-title {
+  font-family: Kinn;
+  font-weight: 500;
+  font-style: Kinn Book;
+  font-size: 55px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+.footer-part-2-description {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 125%;
+  letter-spacing: 0%;
+  color: #a3b8ae;
+  margin-bottom: 32px;
+}
+
+/* Action Execution Row */
+.footer-part-2-actions {
+  display: flex;
+  gap: 14px;
+}
+
+/* Universal Button Configuration */
+.footer-part-2-btn {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  border: none;
+  outline: none;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #061c12;
+  color: #a3b8ae;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Interactive Active Button Accent Overrides */
+.footer-part-2-btn.footer-part-2-active {
+  background-color: #6ebd45; /* True green brand color from original image */
+  color: #ffffff;
+  border-color: #6ebd45;
+  box-shadow: 0 4px 20px rgba(110, 189, 69, 0.3);
+}
+
+.footer-part-2-btn:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.footer-part-2-btn.footer-part-2-active:hover {
+  background-color: #5fa33b;
+  border-color: #5fa33b;
+}
+
+/* --- Responsiveness Media Queries --- */
+@media (max-width: 768px) {
+  .footer-part-2-container {
+    padding: 60px 30px;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .footer-part-2-content {
+    max-width: 100%;
+  }
+.pf-cta-container{
+  padding: 0px 50px;
+}
+  .footer-part-2-title {
+    font-size: 2.25rem;
+  }
+
+  .footer-part-2-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-part-2-btn {
+    width: 60%;
+    margin-left: 130px;
+  }
+  .first-slider-section {
+    padding: 20px 20px;
+  }
+  .nutshell-section {
+    padding: 20px 20px;
+  }
+  .pipfarm-process-section {
+    padding: 30px 20px;
+  }
+  .pf-payout-section {
+    padding: 50px 30px;
+  }
+  .faq-section {
+    padding: 30px 40px;
+  }
+  .pf-reviews-section {
+    padding: 30px 0px;
+  }
+  
+}
+@media (max-width: 1024px) {
+  .blog-archive-container{
+    padding: 40px 30px;
+  }
+  .first-slider-main-title {
+    font-size: 35px;
+  }
+  .first-slider-amount {
+    font-size: 25px;
+  }
+  .first-slider-features li {
+    font-size: 19px;
+  }
+  .header-actions {
+    padding-right: 0px;
+  }
+  .first-slider-price {
+    font-size: 21px;
+  }
+  .first-slider-label {
+    font-size: 21px;
+  }
+     .mockup-display {
+        height: 327px;
+        max-width: 509px;
+        margin-top: 97px;
+        margin-left: -23px;
+    }
+    .hero-title{
+      font-size: 44px;
+    }
+   .hero-subtitle{
+    font-size: 17px;
+   }
+   .cta-group{
+    margin-left: 30px;
+   }
+ 
+}
+
+
+
+
+
+@media (max-width:425px) {
+
+  
+  .featured-section{
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+  }
+  .container{
+    padding: 40px 0px;
+  }
+  .pf-cta-container{
+    padding: 0px 30px;
+  }
+  .pf-payout-container{
+    padding: 0px 0px;
+  }
+  .blog-archive-container{
+    padding: 30px 20px;
+  }
+  .faq-section{
+    padding: 30px 20px;
+  }
+  .first-slider-main-title{
+    font-size: 30px;
+  }
+  .section-title{
+    margin-bottom: 20px;
+  }
+  .pipfarm-process-title{
+    margin-bottom: 35px;
+  }
+  .pf-reviews-header{
+    margin-bottom: 20px;
+  }
+  .footer-part-2-title{
+    margin-bottom: 0px;
+  }
+  .footer-part-2-description{
+    margin-bottom: 10px;
+  }
+  .footer-part-2-btn {
+        width: 70%;
+        margin-left: 55px;
+    }
+}
+
+
+@media (max-width:768px) {
+
+.mockup-display {
+        height: 262px;
+        max-width: 384px;
+        margin-top: 46px;
+        margin-left: -18px;
+    }
+    .hero-title{
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    .hero-subtitle{
+      font-size: 15px;
+      margin: 0 auto 10px auto;
+    }
+    .mockup-display{
+      padding: 20px 20px;
+    }
+    .cta-group{
+      margin-left: 0px;
+    }
+    .btn{
+      font-size: 14px;
+    }
+    .footer-part-2-description{
+      margin-bottom: 20px;
+    }
+    .footer-part-2-title{
+      margin-bottom: 10px;
+    }
+    .pf-scaling-lead,.pf-scaling-subtitle{
+      font-size: 14px;
+    }
+    
+    
+  
+}
+@media (max-width:375px) {
+  .mockup-display{
+    margin-left: 0px;
+  }
+  .pipfarm-process-title{
+    font-size: 30px;
+  }
+  .footer-part-2-btn {
+        width: 80%;
+        margin-left: 30px;
+    }
+}
