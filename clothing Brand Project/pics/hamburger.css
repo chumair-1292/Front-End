@@ -1,0 +1,779 @@
+/* Base Resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1E2822; /* Deep forest dark green theme color */
+    font-family: 'Cinzel', serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.story-section {
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- TRIBAL BORDER PATTERN CSS GENERATION --- */
+.tribal-pattern {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    /* Generates repeating geometric diamond/triangle motifs directly via CSS styling patterns */
+    background: linear-gradient(135deg, #C58345 25%, transparent 25%) -20px 0,
+                linear-gradient(225deg, #C58345 25%, transparent 25%) -20px 0,
+                linear-gradient(45deg, #C58345 25%, transparent 25%),
+                linear-gradient(315deg, #C58345 25%, #1E2822 25%);
+    background-size: 40px 40px;
+    background-repeat: repeat-x;
+}
+
+.pattern-top { top: 0; transform: rotate(180deg); }
+.pattern-bottom { bottom: 0; }
+
+/* Layout Grid Wrapper */
+.story-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 50px;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 40px;
+    align-items: center;
+}
+
+/* Typography Text Block Styling */
+.story-text-panel {
+    color: #FAF4EE;
+}
+
+.story-subtitle {
+    display: block;
+    font-size: 16px;
+    color: #C58345;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.story-title {
+    font-size: 42px;
+    font-weight: 500;
+    color: #C58345;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.story-paragraph p {
+    font-size: 14px;
+    font-family: 'Arial', sans-serif; /* Clean contrast reading paragraph font */
+    line-height: 1.8;
+    color: #D1C7BD;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* --- SWIPEABLE TIMELINE PORTFOLIO SCROLLER --- */
+.gallery-slider-viewport {
+    display: flex;
+    gap: 60px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    cursor: grab;
+    user-select: none;
+    padding: 40px 10px;
+}
+
+.gallery-slider-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-slider-viewport.is-dragging {
+    cursor: grabbing;
+}
+
+/* Stacked Image Group Component */
+.gallery-card-pair {
+    position: relative;
+    flex: 0 0 450px; /* Locked size wrapper width */
+    height: 480px;
+}
+
+.frame-primary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 340px;
+    border: 2px solid #C58345;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    overflow: hidden;
+    z-index: 2;
+}
+
+.frame-secondary {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 240px;
+    height: 280px;
+    border: 2px solid #C58345;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.frame-primary img, .frame-secondary img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    transition: transform 0.4s ease;
+}
+
+/* --- RESPONSIVE LAYOUT CONSTRAINTS --- */
+
+/* Tablet & Intermediate Views */
+@media (max-width: 1024px) {
+    .story-wrapper {
+        grid-template-columns: 1fr; /* Stacks layout vertically */
+        gap: 40px;
+    }
+    .story-title {
+        font-size: 34px;
+        margin-bottom: 15px;
+    }
+    .gallery-slider-viewport {
+        padding-left: 0;
+    }
+}
+
+/* Smartphone Mobile Views */
+@media (max-width: 600px) {
+    .story-section {
+        padding: 60px 0;
+    }
+    .story-wrapper {
+        padding: 0 20px;
+    }
+    .gallery-card-pair {
+        flex: 0 0 310px; /* Scales down container sizing boundaries slightly for mobile width */
+        height: 360px;
+    }
+    .frame-primary {
+        width: 220px;
+        height: 240px;
+    }
+    .frame-secondary {
+        width: 160px;
+        height: 190px;
+    }
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: #FFFFFF;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 40px;
+    background-color: #F5A2B3; /* Original soft pink menu background */
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2.5px;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+}
+
+.logo-group {
+    text-align: center;
+}
+
+.logo-main {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #7D4684; /* Signature Brand Purple */
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.logo-sub {
+    font-size: 9px;
+    color: #888888;
+    display: block;
+    letter-spacing: 2px;
+    margin-top: 2px;
+    font-weight: 600;
+}
+
+.desktop-menu {
+    display: none; /* Hidden by default on mobile device screens */
+    gap: 28px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333333;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #7D4684;
+}
+
+.contact-btn {
+    text-decoration: none;
+    background-color: #F5A2B3; /* Original soft pink color */
+    color: #333333;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 10px;
+    transition: opacity 0.2s;
+}
+
+.contact-btn:hover {
+    opacity: 0.9;
+}
+
+/* --- MAIN HERO WRAPPER CANVAS --- */
+.hero-wrapper {
+    padding: 12px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.hero-card {
+    background-color: #7D4684; /* Signature Deep Purple Card Container */
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+    padding: 32px 20px 0 20px;
+}
+
+/* --- RESPONSIVE GRAPHICS BACKGROUND LAYER --- */
+.bg-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.icon-heart-top, .icon-alarm, .icon-heart-center, .badge-handmade {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+}
+
+/* Position values match structural look inside the mobile mockup box layout */
+.icon-heart-top {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    color: #EFF54B; /* Yellow accent heart marker */
+    opacity: 0.8;
+}
+
+.icon-alarm {
+    top: 50%;
+    left: 8%;
+    font-size: 28px;
+    color: #EFF54B;
+    opacity: 0.4;
+    transform: rotate(-15deg);
+}
+
+.icon-heart-center {
+    top: 45%;
+    left: 35%;
+    font-size: 32px;
+    color: #EFF54B;
+    opacity: 0.6;
+    transform: rotate(10deg);
+}
+
+.badge-handmade {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1.5px dashed rgba(255, 255, 255, 0.3);
+    color: #EFF54B;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    transform: rotate(15deg);
+    right: 5%;
+    top: 48%;
+    white-space: nowrap;
+}
+
+/* --- MOBILE LAYOUT GRID HANDLING --- */
+.hero-grid {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column; /* Vertical stack grid default behavior for phone screens */
+    gap: 20px;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.hero-tagline {
+    color: #EFF54B; /* Yellow Highlight Typography Accent */
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 44px; /* Space out below top heart bubble icon background */
+    margin-bottom: 12px;
+    line-height: 1.4;
+    max-width: 290px;
+}
+
+.hero-title {
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.25;
+    margin-bottom: 24px;
+    max-width: 320px;
+}
+
+.action-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.order-btn {
+    background-color: #EFF54B; /* Bold Yellow Button */
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    width: max-content;
+}
+
+/* Social Proof Components */
+.happy-customers {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar-stack {
+    display: flex;
+}
+
+.avatar-stack img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #7D4684;
+    margin-left: -10px;
+}
+
+.avatar-stack img:first-child {
+    margin-left: 0;
+}
+
+.customer-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.customer-title {
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.customer-rating {
+    color: #E2D3E4;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* --- PRESENTER WORKSPACE PANEL (RIGHT SIDE) --- */
+.right-content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.presenter-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.presenter-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 50% 50% 0 0; /* Creates arched framing around presenter layout */
+}
+
+/* Small Pasta Secondary Plate Indicator */
+.pasta-thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #7D4684;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.pasta-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pasta-thumbnail.mobile-only {
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    z-index: 5;
+}
+
+/* --- OVERLAY CARDS FRAME SYSTEM --- */
+.overlay-card {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    z-index: 4;
+}
+
+/* Mr Robin Floating Overlay Component Layout positioning on mobile */
+.courier-card {
+    position: absolute;
+    top: 35%;
+    left: -10px;
+    width: 210px;
+    border-radius: 40px;
+}
+
+.courier-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.courier-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.courier-text h3 {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.courier-text p {
+    color: #E2D3E4;
+    font-size: 11px;
+}
+
+.phone-btn {
+    background-color: #EFF54B;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    font-size: 12px;
+}
+
+/* Product Floating Metrics Badge card overlay positioning on mobile */
+.product-card {
+    background: linear-gradient(135deg, rgba(239, 245, 75, 0.92), rgba(210, 180, 222, 0.95));
+    width: 92%;
+    max-width: 260px;
+    margin-top: -35px; /* Pulls up and floats card above presenter base frame */
+    margin-bottom: 24px;
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+.product-thumb {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-right: 12px;
+    background-color: white;
+}
+
+.product-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-text h3 {
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.stars {
+    color: #7D4684;
+    font-size: 10px;
+    margin: 2px 0;
+}
+
+.price {
+    color: #7D4684;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Global utility visibility togglers */
+.desktop-only { display: none !important; }
+.mobile-only { display: block; }
+
+/* --- SIDEBAR MOBILE DRAWER LAYOUT --- */
+.sidebar-drawer {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    background-color: #FFFFFF;
+    z-index: 2000;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+    padding: 24px;
+}
+
+.sidebar-drawer.open {
+    left: 0;
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 12px;
+}
+
+.drawer-header h3 {
+    color: #7D4684;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.close-drawer-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888888;
+}
+
+.drawer-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.drawer-nav-links a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.drawer-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1999;
+    display: none;
+}
+
+.drawer-backdrop.open {
+    display: block;
+}
+
+
+/* --- DESKTOP SCREEN RESOLUTIONS TRANSLATION LAYER --- */
+@media (min-width: 1024px) {
+    .mobile-menu-btn { display: none; }
+    .desktop-menu { display: flex; }
+    .desktop-only { display: block !important; }
+    .mobile-only { display: none !important; }
+
+    .navbar {
+        padding: 20px 40px;
+    }
+
+    .hero-wrapper {
+        padding: 24px 40px;
+    }
+
+    .hero-card {
+        padding: 50px 60px 0 60px;
+    }
+
+    /* Transition layout stack sequence directly into a landscape row grid */
+    .hero-grid {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .left-content {
+        flex: 1.1;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .hero-tagline {
+        font-size: 16px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 52px;
+        max-width: 520px;
+        margin-bottom: 36px;
+    }
+
+    .action-block {
+        flex-direction: row;
+        gap: 40px;
+        width: auto;
+    }
+
+    /* Desktop alignment overrides for pasta layout */
+    .pasta-thumbnail.desktop-only {
+        width: 150px;
+        height: 150px;
+        margin-top: 40px;
+        align-self: flex-start;
+    }
+
+    .right-content {
+        flex: 0.9;
+        margin-top: 0;
+        display: block; /* Utilize relative coordinates space mapping instead */
+    }
+
+    .presenter-image-container {
+        max-width: 480px;
+        position: absolute;
+        bottom: 0;
+        right: 40px;
+    }
+
+    /* Overlays responsive mapping positions for desktop desktop layout dimensions */
+    .courier-card {
+        top: 25%;
+        left: -80px;
+        width: 250px;
+        padding: 12px 18px;
+    }
+
+    .product-card {
+        position: absolute;
+        bottom: 50px;
+        right: -30px;
+        width: 250px;
+        margin: 0;
+    }
+
+    /* Reset background vector icon coordinates for desktop window spacing scales */
+    .icon-heart-top {
+        top: 50px;
+        left: 4%;
+        transform: none;
+    }
+    
+    .icon-alarm {
+        top: 15%;
+        left: 56%;
+    }
+
+    .icon-heart-center {
+        top: 12%;
+        left: 66%;
+    }
+
+    .badge-handmade {
+        top: 15%;
+        right: 6%;
+        font-size: 16px;
+    }
+}
